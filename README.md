@@ -4,33 +4,43 @@ Este proyecto fue recopilado de http://tonyfreed.com/blog/ionic_barcode_scanner,
 
 Paso 1
 
-Ejecutar el siguiente comando desde la consola de node.
+Ejecutar el siguiente comando desde la consola de node: 
+
 ionic start IonicProject blank
+
 cd IonicProject
 
 Paso 2
 
 Añadir plataformas
+
 ionic platform add android
 ionic platform add ios
 
 Paso 3
 
 Añadir plugin
+
 cordova plugin add https://github.com/wildabeast/BarcodeScanner.git
+
 bower install ngCordova
 
 Paso 4
 
 Referenciar a cordova
+
 index.html
+
 <script src="lib/ngCordova/dist/ng-cordova.js"></script>
+
 app.js
+
 angular.module('starter', ['ionic','ngCordova'])
 
 Paso 5
 
-añadir el controler del scanner
+añadir el controler del scanner:
+
 .controller('HomeCtrl', ['$scope','$cordovaBarcodeScanner','$ionicPlatform',
    function($scope,$cordovaBarcodeScanner,$ionicPlatform) {
       $scope.scan = function(){
